@@ -1,0 +1,603 @@
+﻿@model AccessJob.Models.Apply
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<div class="row">
+    @section featured
+{
+        <form asp-action="Create">
+            <section id="page1">
+                <div class="card bg-info mb-3">
+                    <div class="form-row">
+                        <div class="col-md-1 mb-3">
+                            <div class="form-group">
+                                <label asp-for="Title" class="control-label"></label>
+                                <input asp-for="Title" class="form-control" />
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <div class="form-group">
+                                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                                <label asp-for="FirstName" class="control-label"></label>
+                                <input asp-for="FirstName" class="form-control" />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <div class="form-group">
+                                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                                <label asp-for="LastName" class="control-label"></label>
+                                <input asp-for="LastName" class="form-control" />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 mb-3">
+                            <div class="form-group">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <div class="form-group">
+                                <i class="fa fa-mobile" aria-hidden="true"></i>
+                                <label asp-for="MobileNumber" class="control-label"></label>
+                                <input asp-for="MobileNumber" class="form-control" />
+                                <span asp-validation-for="MobileNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <div class="form-group">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                <label asp-for="DateOfBirth" class="control-label"></label>
+                                <input asp-for="DateOfBirth" class="form-control" />
+                                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-1 mb-3">
+                            <div class="form-group">
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                <label asp-for="PostalCode" class="control-label"></label>
+                                <input asp-for="PostalCode" class="form-control" />
+                                <span asp-validation-for="PostalCode" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <i class="fa fa-briefcase" aria-hidden="true"></i>
+                                    <label asp-for="PositionApplyingFor" class="control-label"></label>
+                                    <select asp-for="PositionApplyingFor" class="form-control" id="PositionApplyingFor">
+                                        <option>Mental Nurse</option>
+                                        <option>General Nurse</option>
+                                        <option>Health Care Assistant</option>
+                                        <option>Support Worker</option>
+                                        <option>Hospital Domestics</option>
+                                        <option>Kitchen Staff</option>
+                                        <option>Cleaners</option>
+                                    </select>
+                                    <span asp-validation-for="PositionApplyingFor" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="CanYouWorkInTheUK" class="control-label"></label>
+                                    <select asp-for="CanYouWorkInTheUK" class="form-control" id="CanYouWorkInTheUK">
+                                        <option>No</option>
+                                        <option>Yes</option>
+                                    </select>
+                                    <span asp-validation-for="CanYouWorkInTheUK" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    <label asp-for="YearsOfExperience" class="control-label"></label>
+                                    <input asp-for="YearsOfExperience" class="form-control" />
+                                    <span asp-validation-for="YearsOfExperience" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <i class="fa fa-sort-numeric-desc" aria-hidden="true"></i>
+                                    <label asp-for="PIN" class="control-label"></label>
+                                    <input asp-for="PIN" class="form-control" />
+                                    <span asp-validation-for="PIN" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    <label asp-for="PINExpiryDate" class="control-label"></label>
+                                    <input asp-for="PINExpiryDate" class="form-control" />
+                                    @*<span asp-validation-for="PINExpiryDate" class="text-danger"></span>*@
+                                </div>
+                                <div class="form-group">
+                                    <i class="fa fa-sort-numeric-desc" aria-hidden="true"></i>
+                                    <label asp-for="NIN" class="control-label"></label>
+                                    <input asp-for="NIN" class="form-control" />
+                                    <span asp-validation-for="NIN" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                                    <label asp-for="ContactAddress"></label>
+                                    <textarea asp-for="ContactAddress" class="form-control" id="ContactAddress" rows="3"></textarea>
+                                    <span asp-validation-for="ContactAddress" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="field">
+                                    <center><h5 style="background-color: powderblue;">Next of Kin Details</h5></center>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="NextOfKinAddress"></label>
+                                    <textarea asp-for="NextOfKinAddress" class="form-control" id="NextOfKinAddress" rows="3"></textarea>
+                                    <span asp-validation-for="NextOfKinAddress" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="NextOfKinNames" class="control-label"></label>
+                                    <input asp-for="NextOfKinNames" class="form-control" />
+                                    <span asp-validation-for="NextOfKinNames" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="NextOfKinRelationship" class="control-label"></label>
+                                    <input asp-for="NextOfKinRelationship" class="form-control" />
+                                    <span asp-validation-for="NextOfKinRelationship" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <i class="fa fa-mobile" aria-hidden="true"></i>
+                                    <label asp-for="NextOfKinPhoneNumber" class="control-label"></label>
+                                    <input asp-for="NextOfKinPhoneNumber" class="form-control" />
+                                    <span asp-validation-for="NextOfKinPhoneNumber" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group d-flex justify-content-center">
+                    <input type="button" id="next1" value="Next" class="btn btn-primary" />
+                </div>
+            </section>
+            <br />
+            <section id="page2">
+                <div class="field">
+                    <center style="background-color: powderblue;"><h5>Full Employment History (most recent first)</h5></center>
+                </div>
+                <br />
+                <div class="card bg-info mb-3">
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <i class="fa fa-building-o" aria-hidden="true"></i>
+                                    <label asp-for="FirstEmploymentCompanyName" class="control-label"></label>
+                                    <input asp-for="FirstEmploymentCompanyName" class="form-control" />
+                                    <span asp-validation-for="FirstEmploymentCompanyName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="FirstEmploymentPosition" class="control-label"></label>
+                                    <input asp-for="FirstEmploymentPosition" class="form-control" />
+                                    <span asp-validation-for="FirstEmploymentPosition" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-8 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="FirstEmploymentDateFrom" class="control-label"></label>
+                                    <input asp-for="FirstEmploymentDateFrom" class="form-control" />
+                                    @*<span asp-validation-for="FirstEmploymentDateFrom" class="text-danger"></span>*@
+                                </div>
+                            </div>
+                            <div class="col-md-8 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="FirstEmploymentDateTo" class="control-label"></label>
+                                    <input asp-for="FirstEmploymentDateTo" class="form-control" />
+                                    @*<span asp-validation-for="FirstEmploymentDateTo" class="text-danger"></span>*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="FirstEmploymentReasonForLeaving" class="control-label"></label>
+                                    <textarea asp-for="FirstEmploymentReasonForLeaving" class="form-control" id="FirstEmploymentReasonForLeaving" rows="3"></textarea>
+                                    <span asp-validation-for="FirstEmploymentReasonForLeaving" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="FirstEmploymentResponsibilities" class="control-label"></label>
+                                    <textarea asp-for="FirstEmploymentResponsibilities" class="form-control" id="FirstEmploymentResponsibilities" rows="3"></textarea>
+                                    <span asp-validation-for="FirstEmploymentResponsibilities" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="FirstEmploymentCompanyAddress" class="control-label"></label>
+                                    <textarea asp-for="FirstEmploymentCompanyAddress" class="form-control" id="FirstEmploymentCompanyAddress" rows="3"></textarea>
+                                    <span asp-validation-for="FirstEmploymentCompanyAddress" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bg-info mb-3">
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="SecondEmploymentCompanyName" class="control-label"></label>
+                                    <input asp-for="SecondEmploymentCompanyName" class="form-control" />
+                                    <span asp-validation-for="SecondEmploymentCompanyName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="SecondEmploymentPosition" class="control-label"></label>
+                                    <input asp-for="SecondEmploymentPosition" class="form-control" />
+                                    <span asp-validation-for="SecondEmploymentPosition" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-8 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="SecondEmploymentDateFrom" class="control-label"></label>
+                                    <input asp-for="SecondEmploymentDateFrom" class="form-control" />
+                                    @*<span asp-validation-for="SecondEmploymentDateFrom" class="text-danger"></span>*@
+                                </div>
+                            </div>
+                            <div class="col-md-8 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="SecondEmploymentDateTo" class="control-label"></label>
+                                    <input asp-for="SecondEmploymentDateTo" class="form-control" />
+                                    @*<span asp-validation-for="SecondEmploymentDateTo" class="text-danger"></span>*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="SecondEmploymentReasonForLeaving" class="control-label"></label>
+                                    <textarea asp-for="SecondEmploymentReasonForLeaving" class="form-control" id="FirstEmploymentReasonForLeaving" rows="3"></textarea>
+                                    <span asp-validation-for="SecondEmploymentReasonForLeaving" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SecondEmploymentResponsibilities" class="control-label"></label>
+                                    <textarea asp-for="SecondEmploymentResponsibilities" class="form-control" id="FirstEmploymentResponsibilities" rows="3"></textarea>
+                                    <span asp-validation-for="SecondEmploymentResponsibilities" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SecondEmploymentCompanyAddress" class="control-label"></label>
+                                    <textarea asp-for="SecondEmploymentCompanyAddress" class="form-control" id="FirstEmploymentCompanyAddress" rows="3"></textarea>
+                                    <span asp-validation-for="SecondEmploymentCompanyAddress" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bg-info mb-3">
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="ThirdEmploymentCompanyName" class="control-label"></label>
+                                    <input asp-for="ThirdEmploymentCompanyName" class="form-control" />
+                                    <span asp-validation-for="ThirdEmploymentCompanyName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="ThirdEmploymentPosition" class="control-label"></label>
+                                    <input asp-for="ThirdEmploymentPosition" class="form-control" />
+                                    <span asp-validation-for="ThirdEmploymentPosition" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-8 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="ThirdEmploymentDateFrom" class="control-label"></label>
+                                    <input asp-for="ThirdEmploymentDateFrom" class="form-control" />
+                                    @*<span asp-validation-for="ThirdEmploymentDateFrom" class="text-danger"></span>*@
+                                </div>
+                            </div>
+                            <div class="col-md-8 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="ThirdEmploymentDateTo" class="control-label"></label>
+                                    <input asp-for="ThirdEmploymentDateTo" class="form-control" />
+                                    @*<span asp-validation-for="ThirdEmploymentDateTo" class="text-danger"></span>*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="ThirdEmploymentReasonForLeaving" class="control-label"></label>
+                                    <textarea asp-for="ThirdEmploymentReasonForLeaving" class="form-control" id="FirstEmploymentReasonForLeaving" rows="3"></textarea>
+                                    <span asp-validation-for="ThirdEmploymentReasonForLeaving" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ThirdEmploymentResponsibilities" class="control-label"></label>
+                                    <textarea asp-for="ThirdEmploymentResponsibilities" class="form-control" id="FirstEmploymentResponsibilities" rows="3"></textarea>
+                                    <span asp-validation-for="ThirdEmploymentResponsibilities" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ThirdEmploymentCompanyAddress" class="control-label"></label>
+                                    <textarea asp-for="ThirdEmploymentCompanyAddress" class="form-control" id="FirstEmploymentCompanyAddress" rows="3"></textarea>
+                                    <span asp-validation-for="ThirdEmploymentCompanyAddress" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="field" style="background-color: powderblue; width:auto">
+                    <center>
+                        <h5 ><i class="fa fa-train" aria-hidden="true"></i> Training/Course Completed</h5>
+                    </center>
+                </div>
+                <br />
+                <div class="card bg-info mb-3">
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <i class="fa fa-certificate" aria-hidden="true"></i>
+                                    <label asp-for="FirstQualification" class="control-label"></label>
+                                    <input asp-for="FirstQualification" class="form-control" />
+                                    <span asp-validation-for="FirstQualification" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                    <label asp-for="FirstAwardingInstitution" class="control-label"></label>
+                                    <input asp-for="FirstAwardingInstitution" class="form-control" />
+                                    <span asp-validation-for="FirstAwardingInstitution" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    <label asp-for="FirstDateAwarded" class="control-label"></label>
+                                    <input asp-for="FirstDateAwarded" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="SecondQualification" class="control-label"></label>
+                                    <input asp-for="SecondQualification" class="form-control" />
+                                    <span asp-validation-for="SecondQualification" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SecondAwardingInstitution" class="control-label"></label>
+                                    <input asp-for="SecondAwardingInstitution" class="form-control" />
+                                    <span asp-validation-for="SecondAwardingInstitution" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SecondDateAwarded" class="control-label"></label>
+                                    <input asp-for="SecondDateAwarded" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="ThirdQualification" class="control-label"></label>
+                                    <input asp-for="ThirdQualification" class="form-control" />
+                                    <span asp-validation-for="ThirdQualification" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ThirdAwardingInstitution" class="control-label"></label>
+                                    <input asp-for="ThirdAwardingInstitution" class="form-control" />
+                                    <span asp-validation-for="ThirdAwardingInstitution" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ThirdDateAwarded" class="control-label"></label>
+                                    <input asp-for="ThirdDateAwarded" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group d-flex justify-content-center">
+                        <input type="button" id="back1" value="Back" class="btn btn-primary" /> |
+                        <input type="button" id="next2" value="next" class="btn btn-primary" />
+                    </div>
+                </div>
+            </section>
+            <section id="page3">
+                <div>
+                    <center>
+                        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                        <h5 style="background-color: red;">Rehabilitation of Offenders Act 1974 (the Act)</h5>
+                        <h5>
+                            You are advised that you are not entitled to withhold information about convictions, which are regarded as spent under
+                            the Act. Tis is due to the nature of the work involved renders the post exempt from Sec. 4(2) of the Act in accordance
+                            with the rehabilitation of Offenders Act 1974 (Exceptions) Order 1975.
+                            You are therefore required to give details of all convictions and cautions including spent convictions. Any information,
+                            which you may provide will be strictly confidential and will be considered only in relation to this or a similar position for
+                            which you may be considered with Access 247 Ltd
+                        </h5>
+                    </center>
+                </div>
+                <div class="card bg-info mb-3">
+                    <div class="form-row">
+                        <div class="col-md-3 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div>
+                                    <center><h5>Immunisation (If Applicable)</h5></center>
+                                </div>
+                                <div class="form-group">
+                                    <i class="fa fa-medkit" aria-hidden="true"></i>
+                                    <label asp-for="ImmunizationName" class="control-label"></label>
+                                    <input asp-for="ImmunizationName" class="form-control" />
+                                    <span asp-validation-for="ImmunizationName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    <label asp-for="DateAdministered" class="control-label" required ="false"></label>
+                                    <input asp-for="DateAdministered" class="form-control" />
+                                    @*<span asp-validation-for="DateAdministered" class="text-danger"></span>*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="Convicted" class="control-label">Have you ever been convicted of a criminal offence?</label>
+                                    <select asp-for="Convicted" class="form-control" id="Convicted">
+                                        <option>No</option>
+                                        <option>Yes</option>
+                                    </select>
+                                    <span asp-validation-for="Convicted" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="TypeOfCrime" class="control-label"></label>
+                                    <input asp-for="TypeOfCrime" class="form-control" />
+                                    <label asp-for="Convicted" class="control-label">
+                                        You are required to complete a Disclosure &amp; Barring form. All health professionals registered with the agency are subject to this
+                                        disclosure process in the interest of all parties concerned.
+                                    </label>
+                                    <span asp-validation-for="TypeOfCrime" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="Disabled" class="control-label">If you have or you ever had a disability, please specify</label>
+                                    <select asp-for="Disabled" class="form-control" id="Disabled">
+                                        <option>No</option>
+                                        <option>Yes</option>
+                                    </select>
+                                    <span asp-validation-for="Disabled" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="TypeOfDisability" class="control-label"></label>
+                                    <select asp-for="TypeOfDisability" class="form-control" id="TypeOfDisability">
+                                        <option>None</option>
+                                        <option>Vision Impairment</option>
+                                        <option>deaf or hard of hearing</option>
+                                        <option>mental health conditions</option>
+                                        <option>intellectual disability</option>
+                                        <option>acquired brain injury</option>
+                                        <option>autism spectrum disorder</option>
+                                        <option>physical disability</option>
+                                    </select>
+                                    <span asp-validation-for="TypeOfDisability" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <i class="fa fa-building" aria-hidden="true"></i>
+                                    <label asp-for="RegisteredWithOtherAgents" class="control-label"></label>
+                                    <select asp-for="RegisteredWithOtherAgents" class="form-control" id="RegisteredWithOtherAgents">
+                                        <option>No</option>
+                                        <option>Yes</option>
+                                    </select>
+                                    <span asp-validation-for="RegisteredWithOtherAgents" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="NameOfAgent" class="control-label"></label>
+                                    <input asp-for="NameOfAgent" class="form-control" />
+                                    <span asp-validation-for="NameOfAgent" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <center>
+                        <h5 style="background-color: powderblue;">Referees</h5>
+                        <h5>(Please note that referees will only be contacted when you have authorised us to do so)</h5>
+                    </center>
+                </div>
+                <br />
+                <div class="card bg-info mb-3">
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="FirstRefereeNames" class="control-label"></label>
+                                    <input asp-for="FirstRefereeNames" class="form-control" />
+                                    <span asp-validation-for="FirstRefereeNames" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="SecondRefereeNames" class="control-label"></label>
+                                    <input asp-for="SecondRefereeNames" class="form-control" />
+                                    <span asp-validation-for="SecondRefereeNames" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="HowDidYouKnowAboutUs" class="control-label"></label>
+                                    <input asp-for="HowDidYouKnowAboutUs" class="form-control" />
+                                    <span asp-validation-for="HowDidYouKnowAboutUs" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group d-flex justify-content-center">
+                    <input type="button" id="back2" value="Back" class="btn btn-primary" /> |
+                    <input type="submit" value="Apply" class="btn btn-primary" />
+                </div>
+            </section>
+        </form>
+    }
+    </div>
+
+@*<div>
+        <a asp-action="Index">Back to List</a>
+    </div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        var data = [];
+    //$(document).on("load", function () {
+    //    $("#page2").hide();
+    //    $("#page3").hide();
+    //    $("#page1").show();
+    //});
+    $(document).ready(function () {
+        $("#page2").hide();
+        $("#page3").hide();
+        $("#page1").show();
+    $('#next1').on('click', function() {
+        $('#page2').show();
+        $('#page1').hide();
+        $('#page3').hide();
+    });
+    $('#back1').on('click', function() {
+        $("#page2").hide();
+        $("#page3").hide();
+        $("#page1").show();
+    });  
+    $('#next2').on('click', function() {
+         $("#page2").hide();
+         $("#page3").show();
+         $("#page1").hide();
+     });
+    $('#back2').on('click', function () {
+        $("#page2").show();
+        $("#page3").hide();
+        $("#page1").hide();
+    });  
+});   
+    </script>
+}
+
+

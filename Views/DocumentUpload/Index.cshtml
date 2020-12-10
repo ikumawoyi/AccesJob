@@ -1,0 +1,32 @@
+﻿<h4>Please upload your CV here</h4>
+<hr />
+<div class="card bg-light mb-3 col-md-6 mb-3">
+    <form asp-controller="DocumentUpload" asp-action="UploadFile" method="post"
+          enctype="multipart/form-data">
+        <h4>Please upload your CV</h4>
+        <input type="file" name="file" />
+        <button type="submit">Upload File</button>
+    </form>
+</div>
+
+
+@*<form asp-controller="DocumentUpload" asp-action="UploadFile" method="post"
+          enctype="multipart/form-data">
+
+        <input type="file" name="file" />
+        <button type="submit">Upload File</button>
+    </form>
+
+    <form asp-controller="DocumentUpload" asp-action="UploadFiles" method="post"
+          enctype="multipart/form-data">
+
+        <input type="file" name="files" multiple />
+        <button type="submit">Upload Files</button>
+    </form>
+
+    <form asp-controller="DocumentUpload" asp-action="UploadFileViaModel" method="post"
+          enctype="multipart/form-data">
+
+        <input type="file" name="FileToUpload" />
+        <button type="submit">Upload File (model)</button>
+    </form>*@

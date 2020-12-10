@@ -1,0 +1,383 @@
+﻿@model IEnumerable<AccessJob.Models.Apply>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Applicants' details</h2>
+
+<p>
+    @*<a asp-action="Create">Create New</a>*@
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PositionApplyingFor)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.CanYouWorkInTheUK)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.MobileNumber)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.PostalCode)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.YearsOfExperience)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.PIN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PINExpiryDate)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.NIN)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NextOfKinNames)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.NextOfKinRelationship)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NextOfKinAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NextOfKinPhoneNumber)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.FirstEmploymentCompanyName)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.FirstEmploymentCompanyAddress)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.FirstEmploymentPosition)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.FirstEmploymentResponsibilities)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.FirstEmploymentReasonForLeaving)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.FirstEmploymentDateFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstEmploymentDateTo)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.SecondEmploymentCompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondEmploymentCompanyAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondEmploymentPosition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondEmploymentResponsibilities)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondEmploymentReasonForLeaving)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondEmploymentDateFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondEmploymentDateTo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThirdEmploymentCompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThirdEmploymentCompanyAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThirdEmploymentPosition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThirdEmploymentResponsibilities)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThirdEmploymentReasonForLeaving)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThirdEmploymentDateFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThirdEmploymentDateTo)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.FirstQualification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstAwardingInstitution)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstDateAwarded)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.SecondQualification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondAwardingInstitution)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondDateAwarded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThirdQualification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThirdAwardingInstitution)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThirdDateAwarded)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.ImmunizationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateAdministered)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Convicted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeOfCrime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Disabled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeOfDisability)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.RegisteredWithOtherAgents)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameOfAgent)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.FirstRefereeNames)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondRefereeNames)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.HowDidYouKnowAboutUs)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PositionApplyingFor)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.CanYouWorkInTheUK)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.MobileNumber)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.PostalCode)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.YearsOfExperience)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.PIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PINExpiryDate)
+            </td>*@
+            @*<td>
+                @Html.DisplayFor(modelItem => item.NIN)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NextOfKinNames)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.NextOfKinRelationship)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NextOfKinAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NextOfKinPhoneNumber)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstEmploymentCompanyName)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.FirstEmploymentCompanyAddress)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstEmploymentPosition)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.FirstEmploymentResponsibilities)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstEmploymentReasonForLeaving)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstEmploymentDateFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstEmploymentDateTo)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.SecondEmploymentCompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondEmploymentCompanyAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondEmploymentPosition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondEmploymentResponsibilities)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondEmploymentReasonForLeaving)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondEmploymentDateFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondEmploymentDateTo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThirdEmploymentCompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThirdEmploymentCompanyAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThirdEmploymentPosition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThirdEmploymentResponsibilities)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThirdEmploymentReasonForLeaving)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThirdEmploymentDateFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThirdEmploymentDateTo)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstQualification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstAwardingInstitution)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstDateAwarded)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.SecondQualification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondAwardingInstitution)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondDateAwarded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThirdQualification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThirdAwardingInstitution)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThirdDateAwarded)
+            </td>*@
+            @*<td>
+                @Html.DisplayFor(modelItem => item.ImmunizationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAdministered)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Convicted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeOfCrime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Disabled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeOfDisability)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.RegisteredWithOtherAgents)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameOfAgent)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstRefereeNames)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondRefereeNames)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.HowDidYouKnowAboutUs)
+            </td>*@
+            <td>
+                @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |*@
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> @*|*@
+                @*<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
